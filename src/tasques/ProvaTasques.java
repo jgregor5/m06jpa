@@ -14,8 +14,9 @@ public class ProvaTasques {
     public static void main(String[] args) {
         
         try {
-            // crearITrobar();
+            //crearITrobar();
             trobarTots();
+            //trobarDescripcio("estudiar");
             
         } finally {
             TasquesDAO.exit();
@@ -36,6 +37,16 @@ public class ProvaTasques {
         TasquesDAO tdao = new TasquesDAO();
         
         List<Tasca> tasques = tdao.trobarTotesLesTasques();
+        for (Tasca tasca: tasques) {
+            System.out.println(tasca);
+        }
+    }
+    
+    private static void trobarDescripcio(String descripcio) {
+        
+        TasquesDAO tdao = new TasquesDAO();
+        
+        List<Tasca> tasques = tdao.trobarPerDescripcio(descripcio);
         for (Tasca tasca: tasques) {
             System.out.println(tasca);
         }
