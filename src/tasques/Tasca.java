@@ -1,6 +1,5 @@
 package tasques;
 
-import java.io.Serializable;
 import java.util.Date;
 
 /**
@@ -15,7 +14,7 @@ import java.util.Date;
  *
  * @author julian
  */
-public class Tasca implements Serializable {
+public class Tasca {
     
     private int id;
     private String descripcio;
