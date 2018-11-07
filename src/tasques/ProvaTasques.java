@@ -14,8 +14,8 @@ public class ProvaTasques {
     public static void main(String[] args) {
         
         try {
-            //crearITrobar();
-            trobarTots();
+            crearITrobar();
+            //trobarTots();
             //trobarDescripcio("estudiar");
             
         } finally {

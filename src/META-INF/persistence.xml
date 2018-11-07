@@ -4,11 +4,14 @@
              xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence
              http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd"
              version="2.2">
-    <persistence-unit name="tasques" transaction-type="RESOURCE_LOCAL">
+    
+    <persistence-unit name="tasques_ms" transaction-type="RESOURCE_LOCAL">
         <!-- Persistence provider -->
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
         <!-- Entity classes -->
-        <class>tasques.Tasca</class>
+        
+        <mapping-file>META-INF/orm.xml</mapping-file>
+        
         <properties>
             <!-- The JDBC URL to the database instance -->
             <property name="javax.persistence.jdbc.url" 
@@ -21,7 +24,32 @@
             <property name="hibernate.show_sql" value="true"/>
             <property name="hibernate.format_sql" value="true"/>
             <property name="hibernate.use_sql_comments" value="false"/>
+            <!-- DB dialect -->
+            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect"/>
         </properties>
     </persistence-unit>
+    
+    <persistence-unit name="tasques_pg" transaction-type="RESOURCE_LOCAL">
+        <!-- Persistence provider -->
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+        <!-- Entity classes -->
+        
+        <mapping-file>META-INF/orm.xml</mapping-file>
+        
+        <properties>
+            <!-- The JDBC URL to the database instance -->
+            <property name="javax.persistence.jdbc.url" 
+                      value="jdbc:postgresql://localhost/testdb?ssl=false"/>
+            <!-- The database username -->
+            <property name="javax.persistence.jdbc.user" value="postgres"/>
+            <!-- The database password -->
+            <property name="javax.persistence.jdbc.password" value="yourpassword"/>
+            <!-- Echo all executed SQL to stdout -->
+            <property name="hibernate.show_sql" value="true"/>
+            <property name="hibernate.format_sql" value="true"/>
+            <property name="hibernate.use_sql_comments" value="false"/>
+            <!-- DB dialect -->
+            <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect"/>            
+        </properties>
+    </persistence-unit>    
 </persistence>
-

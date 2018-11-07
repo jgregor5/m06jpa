@@ -79,7 +79,7 @@ public class TasquesAltDAO {
     
     private EntityManagerFactory getEMF() {
         if (TasquesAltDAO.emf == null) {
-            TasquesAltDAO.emf = Persistence.createEntityManagerFactory("tasques");
+            TasquesAltDAO.emf = Persistence.createEntityManagerFactory("tasques_ms");
         }
         return TasquesAltDAO.emf;
     }

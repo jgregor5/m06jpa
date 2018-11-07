@@ -2,12 +2,6 @@ package tasques;
 
 import java.io.Serializable;
 import java.util.Date;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 
 /**
  * 
@@ -21,22 +15,12 @@ import javax.persistence.TemporalType;
  *
  * @author julian
  */
-@Entity
-@Table(name = "tasques")
 public class Tasca implements Serializable {
     
-    @Id
-    @Column(name = "id", unique = true)
     private int id;
-    @Column(name = "descripcio", nullable = false)
     private String descripcio;
-    @Column(name = "data_inici", nullable = true)
-    @Temporal(TemporalType.TIMESTAMP)
     private Date dataInici;
-    @Column(name = "data_final", nullable = false)
-    @Temporal(TemporalType.TIMESTAMP)
     private Date dataFinal;
-    @Column(name = "finalitzada", nullable = true)
     private boolean finalitzada;
     
     public Tasca() {        

@@ -1,0 +1,37 @@
+<entity-mappings xmlns="http://xmlns.jcp.org/xml/ns/persistence/orm"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence/orm
+      http://xmlns.jcp.org/xml/ns/persistence/orm_2_2.xsd"
+    version="2.2">
+   
+   <description>Tasques mapping file</description>
+   
+   <entity class="tasques.Tasca" name="Tasca">        
+      <table name="tasques"/>
+      
+      <attributes>
+         <id name="id">
+	         <column name="id" nullable="false"/>
+         </id>
+         
+         <basic name="descripcio">
+            <column name="descripcio" length="300" nullable="false"/>
+         </basic>
+         
+         <basic name="dataInici">
+	     	<column name="data_inici" nullable="true"/>
+	     	<temporal>TIMESTAMP</temporal>
+         </basic>
+         
+         <basic name="dataFinal">
+	     	<column name="data_final" nullable="false"/>
+	     	<temporal>TIMESTAMP</temporal>         
+         </basic>
+
+         <basic name="finalitzada">
+	     	<column name="finalitzada" nullable="false"/>         
+         </basic>
+      </attributes>
+      
+   </entity>
+</entity-mappings>
