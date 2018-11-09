@@ -33,6 +33,13 @@ public class CotxesDAO {
         throw new RuntimeException("no implementat!");
     }
     
+    // COTXES
+    
+    public List<Cotxe> findCotxesMarca(String nom) {
+        
+        throw new RuntimeException("no implementat!");
+    }
+    
     // UTILS
     
     public static void exit() {

@@ -47,7 +47,7 @@ public class ProvaCotxes {
             switch (parts[0]) {
                 case "?":
                     System.out.println(
-                    "mlist|mnew TXT|mfind TXT|mdel TXT|exit");
+                    "mlist|mnew TXT|mfind TXT|mdel TXT|clist TXT|exit");
                     break;
                 
                 case "mlist":
@@ -77,6 +77,14 @@ public class ProvaCotxes {
                     System.out.println(foundMarca);
                     break;
                     
+                case "clist":
+                    String findMarca = getStrParameter(parts, 1);
+                    List<Cotxe> cotxes = dao.findCotxesMarca(findMarca); 
+                    for (Cotxe cotxe: cotxes) {
+                        System.out.println(cotxe);
+                    }                    
+                    break;                    
+                                        
                 case "exit":
                     end = true;
                     break;
