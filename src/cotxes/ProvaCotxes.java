@@ -84,7 +84,14 @@ public class ProvaCotxes {
                         System.out.println(cotxe);
                     }                    
                     break;                    
-                                        
+                                   
+                case "cnew":
+                    findMarca = getStrParameter(parts, 1);
+                    String newModel = getStrParameter(parts, 1);
+                    Cotxe cotxe = dao.createCotxe(findMarca, newModel);
+                    System.out.println(cotxe);
+                    break;
+                    
                 case "exit":
                     end = true;
                     break;

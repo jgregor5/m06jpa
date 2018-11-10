@@ -40,6 +40,11 @@ public class CotxesDAO {
         throw new RuntimeException("no implementat!");
     }
     
+    public Cotxe createCotxe(String marcaStr, String modelStr) {
+        
+        throw new RuntimeException("no implementat!");
+    }
+    
     // UTILS
     
     public static void exit() {
