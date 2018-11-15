@@ -65,7 +65,7 @@ public class ProvaCotxes {
                 break;
                 
             case "mlist":
-                assetParameterCount(parts, 1);
+                assertParameterCount(parts, 1);
                 List<Marca> marques = dao.findMarques();
                 for (Marca marca: marques) {
                     System.out.println(marca);
@@ -73,7 +73,7 @@ public class ProvaCotxes {
                 break;
                 
             case "mnew":
-                assetParameterCount(parts, 2);
+                assertParameterCount(parts, 2);
                 String newName = getStrParameter(parts, 1);
                 Marca marca = new Marca();
                 marca.setMarca(newName);
@@ -82,21 +82,21 @@ public class ProvaCotxes {
                 break;
                 
             case "mdel":
-                assetParameterCount(parts, 2);
+                assertParameterCount(parts, 2);
                 String delName = getStrParameter(parts, 1);
                 boolean deleted = dao.deleteMarca(delName);
                 System.out.println("deleted=" + deleted);
                 break;
                 
             case "mfind":
-                assetParameterCount(parts, 2);
+                assertParameterCount(parts, 2);
                 String findName = getStrParameter(parts, 1);
                 Marca foundMarca = dao.findMarca(findName);
                 System.out.println(foundMarca);
                 break;
                 
             case "clist":
-                assetParameterCount(parts, 2);
+                assertParameterCount(parts, 2);
                 String findMarca = getStrParameter(parts, 1);
                 List<Cotxe> cotxes = dao.findCotxesMarca(findMarca);
                 for (Cotxe cotxe: cotxes) {
@@ -105,7 +105,7 @@ public class ProvaCotxes {
                 break;
                 
             case "cnew":
-                assetParameterCount(parts, 3);
+                assertParameterCount(parts, 3);
                 findMarca = getStrParameter(parts, 1);
                 String newModel = getStrParameter(parts, 2);
                 Cotxe cotxe = dao.createCotxe(findMarca, newModel);
@@ -113,21 +113,21 @@ public class ProvaCotxes {
                 break;
                 
             case "cdel":
-                assetParameterCount(parts, 3);
+                assertParameterCount(parts, 3);
                 findMarca = getStrParameter(parts, 1);
                 String findModel = getStrParameter(parts, 2);
                 System.out.println("deleted=" + dao.deleteCotxe(findMarca, findModel));
                 break;
                 
             case "cfind":
-                assetParameterCount(parts, 3);
+                assertParameterCount(parts, 3);
                 findMarca = getStrParameter(parts, 1);
                 findModel = getStrParameter(parts, 2);
                 System.out.println(dao.findCotxe(findMarca, findModel));
                 break;                
                 
             case "vlist":
-                assetParameterCount(parts, 3);
+                assertParameterCount(parts, 3);
                 findMarca = getStrParameter(parts, 1);
                 findModel = getStrParameter(parts, 2);
                 List<Variant> variants = dao.findVariantsCotxe(findMarca, findModel);
@@ -137,7 +137,7 @@ public class ProvaCotxes {
                 break;
                 
             case "vnew":
-                assetParameterCount(parts, 4);
+                assertParameterCount(parts, 4);
                 findMarca = getStrParameter(parts, 1);
                 findModel = getStrParameter(parts, 2);
                 String newVariant = getStrParameter(parts, 3);
@@ -177,7 +177,7 @@ public class ProvaCotxes {
         }
     }
     
-    private static void assetParameterCount(String[] parts, int count) throws IOException {
+    private static void assertParameterCount(String[] parts, int count) throws IOException {
         
         if (parts.length != count) {
             throw new IOException("wrong parameter count " + (parts.length - 1) + ": must be " + (count - 1));
