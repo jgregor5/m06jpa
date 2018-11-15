@@ -1,5 +1,8 @@
 package cotxes;
 
+import java.util.Collection;
+import java.util.List;
+
 /*
 CREATE TABLE `cotxes` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -22,6 +25,7 @@ public class Cotxe {
     private int id;
     private String model;
     private Marca marca;
+    private List<Variant> variants;
 
     public int getId() {
         return id;
@@ -47,9 +51,17 @@ public class Cotxe {
         this.marca = marca;
     }
 
+        public Collection<Variant> getVariants() {
+        return variants;
+    }
+
+    public void setVariants(List<Variant> variants) {
+        this.variants = variants;
+    }
+
     @Override
     public String toString() {
-        return "Cotxe{" + "id=" + id + ", model=" + model + ", marca=" + marca + '}';
+        return "Cotxe{" + "id=" + id + ", model=" + model + ", marca=" + marca + ", variants=" + variants + '}';
     }
 
 }

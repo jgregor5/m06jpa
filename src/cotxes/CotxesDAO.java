@@ -40,7 +40,29 @@ public class CotxesDAO {
         throw new RuntimeException("no implementat!");
     }
     
+    public Cotxe findCotxe(String marcaStr, String modelStr) {
+        
+        throw new RuntimeException("no implementat!");
+    }
+    
     public Cotxe createCotxe(String marcaStr, String modelStr) {
+        
+        throw new RuntimeException("no implementat!");
+    }
+    
+    public boolean deleteCotxe(String marcaStr, String modelStr) {
+        
+        throw new RuntimeException("no implementat!");
+    }
+    
+    // VARIANTS
+    
+    public List<Variant> findVariantsCotxe(String marca, String model) {
+        
+        throw new RuntimeException("no implementat!");
+    }
+    
+    public Variant createVariant(String marcaStr, String modelStr, String variantStr) {
         
         throw new RuntimeException("no implementat!");
     }
